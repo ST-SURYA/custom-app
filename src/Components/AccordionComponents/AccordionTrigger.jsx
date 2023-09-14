@@ -6,7 +6,7 @@ const AccordionTrigger = React.forwardRef(
   ({ children, className, ...props }, forwardedRef) => (
     <Accordion.Header>
       <Accordion.Trigger
-        className={"accordion-trigger"}
+        className={`accordion-trigger ${className}`}
         {...props}
         ref={forwardedRef}
       >
