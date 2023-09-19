@@ -1,7 +1,12 @@
-import React from "react";
+import React, { forwardRef, HTMLProps, ReactNode } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 
-const AccordionContent = React.forwardRef(
+export interface AccordionContentProps extends HTMLProps<HTMLDivElement>{
+  children?: ReactNode;
+  className?:string
+}
+
+const AccordionContent = forwardRef<HTMLDivElement, AccordionContentProps>(
   ({ children, className, ...props }, forwardedRef) => (
     <Accordion.Content
       className={`accordion-panel ${className}`}
@@ -12,4 +17,5 @@ const AccordionContent = React.forwardRef(
     </Accordion.Content>
   )
 );
+
 export default AccordionContent;
